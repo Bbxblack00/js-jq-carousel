@@ -1,6 +1,20 @@
 
 
 
+function prevChange() {
+  console.log('operativo');
+
+  var activeImg = $('.active');
+  var prevImg = activeImg.prev('img');
+
+
+  activeImg.removeClass('active');
+  prevImg.addClass('active');
+
+
+}
+
+
 function nextChange() {
   console.log('operativo');
 
@@ -13,7 +27,6 @@ function nextChange() {
 
 
 }
-
 
 
 
