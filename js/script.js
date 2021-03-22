@@ -2,13 +2,34 @@
 
 
 function prevChange() {
-  console.log('operativo');
 
-  var activeImg = $('.active');
+
+
+
+
+  // circle
+  var activeCircle = $('i.active');
+  var prevCircle = activeCircle.prev('i');
+  var contrCircle = activeCircle.hasClass('first')
+
+
+
+
+
+  // img
+  var activeImg = $('img.active');
   var prevImg = activeImg.prev('img');
-  var contr = activeImg.hasClass('first');
+  var contrImg = activeImg.hasClass('first');
 
-  if (contr) {
+
+
+
+
+  if (contrImg && contrCircle) {
+
+    prevCircle = $('i.last');
+    activeCircle.removeClass('active');
+    prevCircle.addClass('active');
 
 
     prevImg = $('img.last');
@@ -18,6 +39,10 @@ function prevChange() {
 
 
   } else {
+
+
+    activeCircle.removeClass('active');
+    prevCircle.addClass('active');
 
 
     activeImg.removeClass('active');
@@ -31,13 +56,23 @@ function prevChange() {
 
 
 function nextChange() {
-  console.log('operativo');
 
-  var activeImg = $('.active');
+
+  var activeCircle = $('i.active');
+  var nextCircle = activeCircle.next('i');
+  var contrCircle = activeCircle.hasClass('last');
+
+
+  var activeImg = $('img.active');
   var nextImg = activeImg.next('img');
-  var contr = activeImg.hasClass('last');
+  var contrImg = activeImg.hasClass('last');
 
-  if (contr) {
+  if (contrImg && contrCircle) {
+
+
+    nextCircle = $('i.first');
+    activeCircle.removeClass('active');
+    nextCircle.addClass('active');
 
 
     nextImg = $('img.first');
@@ -47,6 +82,10 @@ function nextChange() {
 
 
   } else {
+
+
+    activeCircle.removeClass('active');
+    nextCircle.addClass('active');
 
 
     activeImg.removeClass('active');
