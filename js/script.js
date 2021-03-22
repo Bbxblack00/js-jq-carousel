@@ -8,10 +8,10 @@ function prevChange() {
 
 
   // circle
-  var activeCircle = $('i.active');
+  var activeCircle = $('.nav i.active');
   var prevCircle = activeCircle.prev('i');
   var contrCircle = activeCircle.hasClass('first')
-
+  console.log(contrCircle);
 
 
 
@@ -22,12 +22,13 @@ function prevChange() {
   var contrImg = activeImg.hasClass('first');
 
 
-
+  console.log(contrImg);
 
 
   if (contrImg && contrCircle) {
+    console.log('dentro if');
 
-    prevCircle = $('i.last');
+    prevCircle = $('.nav i.last');
     activeCircle.removeClass('active');
     prevCircle.addClass('active');
 
