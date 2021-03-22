@@ -6,10 +6,25 @@ function prevChange() {
 
   var activeImg = $('.active');
   var prevImg = activeImg.prev('img');
+  var contr = activeImg.hasClass('first');
+
+  if (contr) {
 
 
-  activeImg.removeClass('active');
-  prevImg.addClass('active');
+    prevImg = $('img.last');
+    activeImg.removeClass('active');
+    prevImg.addClass('active');
+
+
+
+  } else {
+
+
+    activeImg.removeClass('active');
+    prevImg.addClass('active');
+
+
+  }
 
 
 }
@@ -20,12 +35,25 @@ function nextChange() {
 
   var activeImg = $('.active');
   var nextImg = activeImg.next('img');
+  var contr = activeImg.hasClass('last');
+
+  if (contr) {
 
 
-  activeImg.removeClass('active');
-  nextImg.addClass('active');
+    nextImg = $('img.first');
+    activeImg.removeClass('active');
+    nextImg.addClass('active');
 
 
+
+  } else {
+
+
+    activeImg.removeClass('active');
+    nextImg.addClass('active');
+
+
+  }
 }
 
 
